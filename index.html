@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume – Shreeya Kalbhor</title>
+    <link rel="stylesheet" href="resume.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f7f2f2; /* Pastel background */
+            font-family: Arial, sans-serif;
+        }
+
+        .resume-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .resume-container {
+            width: 800px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #e8f5e9; /* Light pastel green */
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        h1, h2 {
+            color: #2e7d32; /* Formal green */
+        }
+
+        .contact-skills {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .contact-section, .skills-section {
+            width: 45%;
+            padding: 15px;
+            background-color: #f1f8e9; /* Light pastel green */
+            border-radius: 10px;
+        }
+
+        .education-experience {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .education-section, .experience-section {
+            width: 45%;
+            padding: 15px;
+            background-color: #f1f8e9; /* Light pastel green */
+            border-radius: 10px;
+        }
+
+        #download-btn, #download-btn-top {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #download-btn:hover, #download-btn-top:hover {
+            background-color: #45a049; /* Darker green */
+        }
+
+        #download-btn-top {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="download-btn-top">Download PDF</button>
+    <div class="resume-wrapper">
+        <div class="resume-container">
+            <div class="header">
+                <h1>SHREEYA KALBHOR</h1>
+                <h2>STUDENT</h2>
+                <p>Ambitious and versatile second-year B.Tech student in Electronics and Computer Science Engineering, driven by a passion for learning and a commitment to personal and professional growth."
+
+</p>
+            </div>
+            <div class="contact-skills">
+                <div class="contact-section">
+                    <h3>CONTACT</h3>
+                    <p>9075530343</p>
+                    <br>
+                    <h3>EMAIL</h3>
+                    <p><a href="mailto:kalbhor.shreeya9@gmail.com">kalbhor.shreeya9@gmail.com</a></p>
+                    <br>
+                    <h3>LINKEDIN</h3>
+                    <p><a href="https://linkedin.com/in/shreeya-kalbhor-93197b220">Shreeya Kalbhor</a></p>
+                    <br>
+                </div>
+                <div class="skills-section">
+                    <h3>SKILLS</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Canva</li>
+                        <li>C Programming</li>
+                        <li>Java</li>
+                        <li>Figma</li>
+                        <li>Management and Operations</li>
+                        <li>Event Planning</li>
+                        <li>Social Media Management</li>
+                        <li>Budgeting</li>
+                        <li>Analytical skills</li>
+                        <li>UI/UX designing</li>
+                        <li>Project Management</li>
+                        <li>Web Development</li>
+                        <li>Leadership</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="education-experience">
+                <div class="education-section">
+                    <h3>EDUCATION</h3>
+                    <ul>
+                        <li><strong>SECONDARY EDUCATION:</strong> ST. Ursula High School</li>
+                        <li><strong>JUNIOR COLLEGE:</strong> Abhishek Arts, Commerce & Science Junior College</li>
+                        <li><strong>DEGREE COLLEGE:</strong> Fr. Conceicao Rodrigues College of Engineering</li>
+                    </ul>
+                </div>
+                <div class="experience-section">
+                    <h3>EXPERIENCE</h3>
+                    <ul>
+                        <li>Serving as a Cultural Representative in the Student Council at Fr CRCE, coordinating and managing college events, fostering student engagement, and promoting cultural initiatives</li>
+                        <li>Contributed to media creation & marketing. Connected with global techenthusiasts & gained exposure to tech fundamentals as a workforce member in Google Developers Students Club at Fr Crce</li>
+                        <li>Volunteered with Sarva Seva Sangh, an NGO in Mumbai, to support slum dwellers and individuals affected by HIV/AIDS through community outreach and assistance programs</li>
+                        <li>Served as Cultural Head of the class, leading the team to win multiple cultural events and securing the 'Best Class in FE' trophy at Euphoria 2024</li>
+                        <li>Led school-wide event decoration for Annual School Festival 2020</li>
+                        <li>Contributed in organizing various outreach programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <button id="download-btn">Download PDF</button>
+    </div>
+
+    <script>
+        document.getElementById('download-btn').addEventListener('click', function () {
+            const element = document.querySelector('.resume-container');
+            html2pdf().from(element).set({
+                margin: 1,
+                filename: 'Shreeya_Kalbhor_Resume.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            }).save();
+        });
+
+        document.getElementById('download-btn-top').addEventListener('click', function () {
+            const element = document.querySelector('.resume-container');
+            html2pdf().from(element).set({
+                margin: 1,
+                filename: 'Shreeya_Kalbhor_Resume.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+            }).save();
+        });
+    </script>
+</body>
+</html>
